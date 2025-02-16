@@ -89,5 +89,5 @@ Este proyecto consiste en una API construida con **Node.js** y **Express** que p
 
 ---
 
-## 📄 Licencia  
+## Licencia  
 Este proyecto está bajo la licencia MIT.
