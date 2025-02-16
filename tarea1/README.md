@@ -14,8 +14,10 @@ GET http://localhost:3000/api/news/top-headlines
 ```
 GET http://localhost:3000/api/news/everything
 ```
-La primera ruta funciona de esa manera, trayendo las fuentes de las noticias. 
+La primera ruta funciona de esa manera, trayendo las fuentes de las noticias.
+
 La segunda ruta necesita de por lo menos un parámetro, como `country=us`.
+
 La tercera ruta necesita de por lo menos un parámetro, como `q=apple`.
 
 ## Ejemplos de uso
