@@ -69,13 +69,11 @@ Este proyecto consiste en una API construida con **Node.js** y **Express** que p
   ```
 - **Descripción:** Devuelve noticias relacionadas con un término de búsqueda.  
 - **Parámetros opcionales:**  
-  - `q=tesla` → Busca noticias con la palabra clave "tesla".  
-  - `from=2024-02-10` → Filtra noticias desde una fecha específica.  
-  - `to=2024-02-14` → Filtra noticias hasta una fecha específica.  
+  - `q=tesla` → Busca noticias con la palabra clave "tesla".    
 
 - **Ejemplo de uso:**  
   ```
-  GET http://localhost:3000/everything?q=tesla&from=2024-02-10&to=2024-02-14
+  GET http://localhost:3000/everything?q=tesla
   ```
 
 ---
