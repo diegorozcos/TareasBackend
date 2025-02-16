@@ -28,7 +28,7 @@ GET http://localhost:3000/api/news/sources
 GET http://localhost:3000/api/news/top-headlines?country=us
 ```
 ```
-GET http://localhost:3000/api/news/sources
+GET http://localhost:3000/api/news/sources?q=apple
 ```
 
 # Correr el proyecto
