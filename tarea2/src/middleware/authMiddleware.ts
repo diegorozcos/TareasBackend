@@ -2,18 +2,18 @@ import { Request, Response, NextFunction } from "express";
 import jwt from 'jsonwebtoken';
 import { HttpStatus } from "../types/http-status";
 
-export const verificarToken = (req: Request, res: Response, next: NextFunction) => {
+export const verificarToken = (req: Request, res: Response, next: NextFunction): Promise<any> => {
     const token = req.header('Authorization');
 
     if (!token) {
-        return res.status(HttpStatus.UNAUTHORIZED).json({ mensaje: 'Acceso denegado. Token no proporcionado.' });
+        return Promise.resolve(res.status(HttpStatus.UNAUTHORIZED).json({ mensaje: 'Acceso denegado. Token no proporcionado.' }));
     }
 
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET as string);
         (req as any).usuario = decoded;
-        next();
+        return Promise.resolve(next());
     } catch (error) {
-        res.status(HttpStatus.UNAUTHORIZED).json({ mensaje: 'Token inválido' });
+        return Promise.resolve(res.status(HttpStatus.UNAUTHORIZED).json({ mensaje: 'Token inválido' }));
     }
 };
