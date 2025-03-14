@@ -89,21 +89,21 @@ npm run start
 
 ## Flujo esperado de peticiones con en Postman
 ### Autenticacion
-1. Crear una cuenta utilizando **POST /signup**
-2. Obtener token mediante **POST /login**
-3. Obtener perfil usando el token mediante **GET /profile**
+1. Crear una cuenta utilizando `POST /signup`
+2. Obtener token mediante `POST /login`
+3. Obtener perfil usando el token mediante `GET /profile`
 
 ### Administrador
-1. Crear un usuario neuvo mediante **POST /users**
-2. Obtener lista de usuarios mediante **GET /users**
-3. Obtener un solo usuario mediante **GET /users/:id**
-4. Actualizar un usuario mediante **PUT /users/:id**
-5. Borrar un usuario con **DELETE /users/:id**
+1. Crear un usuario neuvo mediante `POST /users`
+2. Obtener lista de usuarios mediante `GET /users`
+3. Obtener un solo usuario mediante `GET /users/:id`
+4. Actualizar un usuario mediante `PUT /users/:id`
+5. Borrar un usuario con `DELETE /users/:id`
 
 ### Publicaciones
-1. Debes estar autenticado mediante tu token usando **POST /login**
-2. Crear una publicación con **POST /posts**
-3. Obtener todas las publicaciones del usuario autenticado con **GET /posts**
+1. Debes estar autenticado mediante tu token usando `POST /login`
+2. Crear una publicación con `POST /posts`
+3. Obtener todas las publicaciones del usuario autenticado con `GET /posts`
 
 ---
 
@@ -116,9 +116,3 @@ npm run start
 
 ## Autor
 Diego Arturo Orozco Sánchez
-
----
-
-## Licencia
-MIT
-
