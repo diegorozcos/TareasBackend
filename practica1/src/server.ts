@@ -3,6 +3,7 @@ dotenv.config();
 import express from 'express';
 import { connectDB } from './config/database';
 import authRoutes from './routes/authRoutes';
+import userRoutes from './routes/userRoutes';
 
 const port = process.env.PORT || 5000;
 
@@ -17,6 +18,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/auth', authRoutes);
+app.use('/users', userRoutes);
 
 app.listen(port, () => {
     console.log(`Servidor corriendo en el puerto ${port}`);

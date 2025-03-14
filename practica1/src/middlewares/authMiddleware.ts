@@ -6,18 +6,18 @@ import { HttpStatus } from '../types/httpStatus';
 
 const secret = process.env.JWT_SECRET;
 
-export const verifyToken = (req: Request, res: Response, next: NextFunction): Promise<any> => {
+export const verifyToken = (req: Request, res: Response, next: NextFunction) => {
     const token = req.header('Authorization');
 
     if (!token) {
-        return Promise.resolve(res.status(HttpStatus.UNAUTHORIZED).json({ message: "Access denied. Token was not given" }));
+        res.status(HttpStatus.UNAUTHORIZED).json({ message: "Access denied. Token was not given" });
     }
 
     try {
-        const decoded = jwt.verify(token, process.env.JWT_SECRET as string);
+        const decoded = jwt.verify(token as string, secret as string);
         (req as any).user = decoded;
-        return Promise.resolve(next());
+        next();
     } catch (error) {
-        return Promise.resolve(res.status(HttpStatus.UNAUTHORIZED).json({ message: "Invalid token" }));
+        res.status(HttpStatus.UNAUTHORIZED).json({ message: "Invalid token" });
     }
 }
