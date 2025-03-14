@@ -18,7 +18,7 @@ export const signup = async (req: Request, res: Response) => {
 
         const hashedPassword = await bcrypt.hash(password, 10);
 
-        const newUser = new userModel({name, email, password: hashedPassword })
+        const newUser = new userModel({ name, email, password: hashedPassword })
         await newUser.save();
 
         res.status(HttpStatus.CREATED).json({ message: "User created successfully"});
@@ -48,10 +48,7 @@ export const login = async (req: Request, res: Response) => {
 
         const token = jwt.sign({ id: user._id, name: user.name, role: user.role}, secret as string);
 
-        res.json({ 
-            message: "Logged in succesfully", 
-            token 
-        });
+        res.json({ message: "Logged in succesfully", token });
     } catch (error) {
         res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({ message: "Error while logging in: ", error});
     }
