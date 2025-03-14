@@ -18,7 +18,7 @@ export const createPost = async(req: Request, res: Response) => {
 
 export const getPosts = async(req: Request, res: Response) => {
     try {
-        const posts = await postModel.find({}).populate('author', 'name email');
+        const posts = await postModel.find().populate('author', 'name email');
         res.status(HttpStatus.SUCCESS).json(posts);
     } catch (error) {
         res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({ message: "An error occured while retrieving all posts" });
