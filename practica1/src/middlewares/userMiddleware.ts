@@ -7,8 +7,8 @@ export const verifyRole = (role: string) => {
 
         if (userRole !== role) {
             res.status(HttpStatus.FORBIDDEN).json({ message: "Access denied. Admin only." });
+            return; 
         }
-
         next();
     };
 };

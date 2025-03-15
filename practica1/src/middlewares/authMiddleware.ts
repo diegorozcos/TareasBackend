@@ -11,6 +11,7 @@ export const verifyToken = (req: Request, res: Response, next: NextFunction) => 
 
     if (!token) {
         res.status(HttpStatus.UNAUTHORIZED).json({ message: "Access denied. Token was not given" });
+        return;
     }
 
     try {
@@ -19,5 +20,6 @@ export const verifyToken = (req: Request, res: Response, next: NextFunction) => 
         next();
     } catch (error) {
         res.status(HttpStatus.UNAUTHORIZED).json({ message: "Invalid token" });
+        return; 
     }
 }
