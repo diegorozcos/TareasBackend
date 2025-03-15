@@ -10,7 +10,7 @@ export const createPost = async(req: Request, res: Response) => {
         const newPost = new postModel({ title, content, author: (req as any).user.id });
         await newPost.save();
 
-        res.status(HttpStatus.SUCCESS).json(newPost);
+        res.status(HttpStatus.CREATED).json(newPost);
     } catch (error) {
         res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({ message: "An error occured while creating the post" });
     }

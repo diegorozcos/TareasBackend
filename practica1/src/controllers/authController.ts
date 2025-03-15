@@ -48,12 +48,12 @@ export const login = async (req: Request, res: Response) => {
 
         const token = jwt.sign({ id: user._id, name: user.name, role: user.role}, secret as string);
 
-        res.json({ message: "Logged in succesfully", token });
+        res.status(HttpStatus.SUCCESS).json({ message: "Logged in succesfully", token });
     } catch (error) {
         res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({ message: "Error while logging in: ", error});
     }
 }
 
 export const profile = (req: Request, res: Response) => {
-    res.json({ user: (req as any).user });
+    res.status(HttpStatus.SUCCESS).json({ user: (req as any).user });
 }
